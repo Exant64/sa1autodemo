@@ -46,7 +46,7 @@ INCLUDEDIRS := src,Include,$(SHC_DIR)\\include
 
 CFLAGS := -sub=shc.sub -include=$(INCLUDEDIRS)
 
-ASFLAGS := -cpu=sh4 -endian=little -sjis
+ASFLAGS := -cpu=sh4 -sjis
 
 LDFLAGS :=
 

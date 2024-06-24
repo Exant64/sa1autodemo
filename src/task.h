@@ -1,6 +1,7 @@
 #ifndef TASK_H
 
 #include <ninja.h>
+#include <c_colli.h>
 
 typedef struct Angle3
 {
