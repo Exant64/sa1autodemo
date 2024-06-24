@@ -1,0 +1,2 @@
+This project is a bit more experimental than the others, specifically focused on decompiling Beta Windy Valley for now.
+Follow the same instructions as on the sa1dc repo, and put STG02.BIN from the SA Autodemo in the rom folder to set up project.

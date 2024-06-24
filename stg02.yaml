@@ -1,0 +1,56 @@
+target_path: rom/STG02.BIN
+elf_path: build/STG02.elf
+map_path: build/STG02.map
+build_path: build
+key: 0x0C900000
+symbol_addrs_path: symbols.stg02.txt
+generated_c_preamble: "#include <task.h>"
+src_path: src
+asm_path: asm
+nonmatchings_path: asm/nonmatching
+linker_path: stg02_lnk.sub
+entry: stg02
+
+section_order: P,C,D,PSG,CSG,DSG,B
+
+additional_linker: ["input .\\build\\asm\\stg02_1st_read_symbols.obj"]
+
+segments:
+  - name: main
+    type: code
+    start: 0x0
+    dir: stg02_windy
+    subsegments: 
+      - [0x0, asm]
+      - [0x240, asm, ef_windy] # most likely misidentified, a lot of "leaf" and similar objects go into this range
+      - [0x22c0, asm]
+      - [0x2340, asm, o_windy_vegetation]
+      - [0x3a20, asm, o_windy_rock]
+      - [0x3b20, asm, o_windy_trampol]
+      - [0x40c0, asm, o_windy_prop]
+      - [0x4200, asm, o_windy_prope]
+      - [0x45c0, asm, o_windy_raft]
+      - [0x5100, asm, o_windy_sirusi1]
+      - [0x5340, asm, o_windy_sirusi2]
+      - [0x56e0, asm, o_windy_sirusi3]
+      - [0x5900, asm, o_windy_sirusi4]
+      - [0x5b20, asm, o_windy_unk] # I DAI, I HAS, I BOU, SARA
+      - [0x5d60, asm]
+      - [0x6040, asm, o_windy_lauchin] # LAUCHIN, TSPRING
+      - [0x6700, asm, o_windy_bridge] # S BRIDG
+      - [0x6760, asm, o_windy_ele] # WELE
+      - [0x6d80, asm, o_windy_prope2]
+      - [0x7920, asm]
+      - [0x7c60, asm]
+      - [0x8840, asm]
+      - [0x99a0, asm, ef_tornade]
+      - [0xa860, asm, rd_windy]
+      - [0xb680, asm]
+      - [0xbd40, asm]
+      - [0xcb60, asm]
+      - [0xd340, asm, e_windy_103]
+      - [0xece0, asm]
+      - [0xf1e0, asm]
+      - [0xfa00, asm]
+      - [0xFFA0, rodata]
+      - [0x111B8, data]
