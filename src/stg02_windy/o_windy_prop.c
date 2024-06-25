@@ -37,7 +37,7 @@ void sub_C904160(taskwk* work) {
     (&lbl_0CA29EDC)->ang[1] = work->ang.x;
     work->ang.x -= 0xB0;
 
-    ___njSetTexture(&lbl_0C9FECB8);
+    njSetTexture(&lbl_0C9FECB8);
     njPushMatrix(NULL);
     njTranslateV(NULL, &work->pos);
     ROTATE_Y(work->ang.y);
