@@ -55,6 +55,24 @@ typedef struct task
 	void* thp;
 } task;
 
+#define ROTATE_X(ang) \
+	{ \
+        Uint32 angy; \
+        if(angy = (ang)) { \
+            njRotateX(NULL, angy); \
+        } \
+        if(0); \
+    } 
+
+#define ROTATE_Z(ang) \
+	{ \
+        Uint32 angy; \
+        if(angy = (ang)) { \
+            njRotateZ(NULL, angy); \
+        } \
+        if(0); \
+    } 
+
 #define ROTATE_Y(ang) \
 	{ \
         Uint32 angy; \

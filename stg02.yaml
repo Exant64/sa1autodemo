@@ -32,6 +32,7 @@ segments:
       - [0x45c0, asm, o_windy_raft]
       - [0x5100, asm, o_windy_sirusi1]
       - [0x5340, asm, o_windy_sirusi2]
+      - [0x54C0, asm, o_windy_sirusi2b]
       - [0x56e0, asm, o_windy_sirusi3]
       - [0x5900, asm, o_windy_sirusi4]
       - [0x5b20, asm, o_windy_unk] # I DAI, I HAS, I BOU, SARA

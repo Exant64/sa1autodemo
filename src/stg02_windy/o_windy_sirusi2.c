@@ -1,18 +1,62 @@
 #include <task.h>
 
-INLINE_ASM(_func_0C905340, "asm/nonmatching/stg02_windy/o_windy_sirusi2/_func_0C905340.src");
+void func_0C905378(taskwk* work);
+void func_0C9053C0(taskwk* work);
 
-INLINE_ASM(_func_0C905378, "asm/nonmatching/stg02_windy/o_windy_sirusi2/_func_0C905378.src");
+bool func_0C905340(task* tp) {
+    taskwk* work = tp->twp;
+    switch(work->mode) {
+        case 0:
+            func_0C905378(work);
+            break;
+        case 1:
+            func_0C9053C0(work);
+            break;
+        default:
+            work->mode = 0;
+            break;
+    }
 
-INLINE_ASM(_func_0C905392, "asm/nonmatching/stg02_windy/o_windy_sirusi2/_func_0C905392.src");
+    if(CheckRangeOut(tp));
+}
 
-INLINE_ASM(_func_0C905470, "asm/nonmatching/stg02_windy/o_windy_sirusi2/_func_0C905470.src");
+void func_0C905378(taskwk* work) {
+    work->ang.z = 0;
+    work->scl.x = 1;
+    work->scl.y = 1;
+    work->scl.z = 1;
+    work->counter.ptr = NULL;    
+    work->mode = 1;
+}
 
-INLINE_ASM(_func_0C9054F4, "asm/nonmatching/stg02_windy/o_windy_sirusi2/_func_0C9054F4.src");
+extern NJS_MODEL* lbl_0CA2B824, *lbl_0CA2BD04;
+extern NJS_TEXLIST lbl_0C9FECB8;
+extern NJS_POINT3 lbl_0CA2B828;
 
-INLINE_ASM(_func_0C905588, "asm/nonmatching/stg02_windy/o_windy_sirusi2/_func_0C905588.src");
+void ___dsDrawModel(NJS_MODEL*);
 
-INLINE_ASM(_func_0C905650, "asm/nonmatching/stg02_windy/o_windy_sirusi2/_func_0C905650.src");
+void func_0C9053C0(taskwk* work) {
+    work->ang.z += 0x400;
 
-INLINE_ASM(_func_0C9056C8, "asm/nonmatching/stg02_windy/o_windy_sirusi2/_func_0C9056C8.src");
+    njSetTexture(&lbl_0C9FECB8);
 
+    njPushMatrix(NULL);
+    njTranslateV(NULL, &work->pos);
+
+    ROTATE_Y(work->ang.y);
+
+    ___dsDrawModel(lbl_0CA2BD04);
+
+    njTranslate(NULL, lbl_0CA2B828.x, lbl_0CA2B828.y, lbl_0CA2B828.z);
+     
+    if((Uint32)(njSin(work->ang.z) * 8192.f) != 0) {            
+        njRotateX(NULL, (Uint32)(njSin(work->ang.z) * 8192.f));
+        if(0);
+    }   
+    
+    /* ROTATE_X(njSin(work->ang.z) * 8192.f); */
+    
+    ___dsDrawModel(lbl_0CA2B824);
+
+    njPopMatrix(1);
+}
