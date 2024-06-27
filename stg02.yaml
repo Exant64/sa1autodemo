@@ -55,3 +55,4 @@ segments:
       - [0xfa00, asm]
       - [0xFFA0, rodata]
       - [0x111B8, data]
+      - [0x1D4AA8, bss, bss, 0x200000]

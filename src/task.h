@@ -32,9 +32,9 @@ typedef struct taskwk {
 		Void* ptr;
 	} timer, value;
 	Angle3 ang;
-	NJS_POINT3 pos;
-	NJS_POINT3 scl;
-	void* cwp;
+	NJS_POINT3 pos; /* 0x20 */
+	NJS_POINT3 scl; /* 0x2C */ 
+	colliwk* cwp;
 	void* ewp;
 } taskwk;
 
@@ -60,8 +60,7 @@ typedef struct task
         Uint32 angy; \
         if(angy = (ang)) { \
             njRotateX(NULL, angy); \
-        } \
-        if(0); \
+        } else {} \
     } 
 
 #define ROTATE_Z(ang) \
@@ -79,8 +78,8 @@ typedef struct task
         if(angy = (ang)) { \
             njRotateY(NULL, angy); \
         } \
-        if(0); \
-    } 
+		else {} \
+    }
 
 #define TASK_H
 

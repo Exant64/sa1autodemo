@@ -51,8 +51,7 @@ void func_0C9053C0(taskwk* work) {
      
     if((Uint32)(njSin(work->ang.z) * 8192.f) != 0) {            
         njRotateX(NULL, (Uint32)(njSin(work->ang.z) * 8192.f));
-        if(0);
-    }   
+    } else {}
     
     /* ROTATE_X(njSin(work->ang.z) * 8192.f); */
     

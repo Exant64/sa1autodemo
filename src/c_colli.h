@@ -4,7 +4,12 @@
 
 typedef struct CCL_INFO {
     /* placeholder */
-    int pad;
+    Uint16 pad;
 } CCL_INFO;
+
+typedef struct colliwk {
+    Sint16 pad;
+    Uint16 flag;
+} colliwk;
 
 #endif
